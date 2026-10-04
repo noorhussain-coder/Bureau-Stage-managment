@@ -64,7 +64,7 @@ export default function BlogCreate() {
     try {
       setLoading(true);
 
-      const { data } = await api.get("/api/blogs");
+      const { data } = await api.get("/api/blogs/get");
 
       setBlogs(Array.isArray(data) ? data : data.blogs || []);
     } catch (error) {
@@ -234,11 +234,17 @@ export default function BlogCreate() {
         "existingImages",
         JSON.stringify(existingImages)
       );
+console.log("FORM DATA:");
 
+for (const [key, value] of formData.entries()) {
+  console.log(key, value);
+}
       if (editingId) {
-        await api.put(`/api/blogs/${editingId}`, formData);
+        await api.put(`/api/blogs/update/${editingId}`, formData);
       } else {
-        await api.post("/api/blogs", formData);
+        // await api.post("/api/blogs", formData);
+        const result= await axios.post("http://localhost:3000/api/blogs/create",formData,{withCredentials:true})
+        console.log(result,'result')
       }
 
       resetForm();

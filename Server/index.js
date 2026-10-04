@@ -24,7 +24,7 @@ app.use(cors({origin:"http://localhost:5173",credentials:true,methods:["GET","PO
 app.use('/api',userRoute)
 app.use('/api/announcement',announcementRoute)
 app.use('/api/apply',applicationRouter)
-app.use('/api/blog',blogRoute)
+app.use('/api/blogs',blogRoute)
 app.use('/api/email',emailRouter)
 app.use('/api/stage',stagesRouter)
 

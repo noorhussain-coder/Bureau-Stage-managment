@@ -1,17 +1,21 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 export default function Apply() {
+    const {id}=useParams()
+    // console.log(id)
   const [form, setForm] = useState({
     name: "",
     email: "",
     phone: "",
     department: "",
     semester: "",
-    stageTitle: "",
+    // stageTitle: "",
     description: "",
-    stageDate: "",
-    location: "",
+    stage:id
+    // stageDate: "",
+    // location: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -31,7 +35,7 @@ export default function Apply() {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/applications",
+        "http://localhost:3000/api/apply/applications",
         form,
         { withCredentials: true }
       );
@@ -46,8 +50,8 @@ export default function Apply() {
         semester: "",
         stageTitle: "",
         description: "",
-        stageDate: "",
-        location: "",
+        // stageDate: "",
+        // location: "",
       });
     } catch (error) {
       setMessage(
@@ -177,40 +181,13 @@ export default function Apply() {
                 className="w-full rounded-lg border p-3 outline-none focus:border-blue-500"
               />
 
-              <div className="grid gap-4 md:grid-cols-2">
+              {/* <div className="grid gap-4 md:grid-cols-2">
 
-                <div>
-                  <label className="mb-2 block text-sm font-medium">
-                    Stage Date
-                  </label>
 
-                  <input
-                    type="date"
-                    name="stageDate"
-                    value={form.stageDate}
-                    onChange={handleChange}
-                    required
-                    className="w-full rounded-lg border p-3"
-                  />
-                </div>
 
-                <div>
-                  <label className="mb-2 block text-sm font-medium">
-                    Location
-                  </label>
+           
 
-                  <input
-                    type="text"
-                    name="location"
-                    placeholder="Stage Location"
-                    value={form.location}
-                    onChange={handleChange}
-                    required
-                    className="w-full rounded-lg border p-3"
-                  />
-                </div>
-
-              </div>
+              </div> */}
 
             </div>
           </div>

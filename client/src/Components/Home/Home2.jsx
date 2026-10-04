@@ -34,7 +34,7 @@ const FEATURES = [
   { icon: Zap, title: "Easy Online Booking", body: "Reserve a stage in a few steps, from your first search to a signed confirmation." },
   { icon: ShieldCheck, title: "Government Approved", body: "Every listed venue is vetted and cleared for official and public use." },
   { icon: Timer, title: "Real-Time Availability", body: "See open dates the moment they change — no back-and-forth calls." },
-  { icon: Lock, title: "Secure Digital Payments", body: "Pay and get receipts through an encrypted, auditable checkout." },
+  // { icon: Lock, title: "Secure Digital Payments", body: "Pay and get receipts through an encrypted, auditable checkout." },
 ];
 
 const CATEGORIES = [

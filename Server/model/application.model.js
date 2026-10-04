@@ -8,11 +8,7 @@ const stageApplicationSchema= new mongoose.Schema({
         ref:'User',
         required:true
     },
-    announcement:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"Announcement",
-        required:true
-    },
+
     stage:{
           type:mongoose.Schema.Types.ObjectId,
         ref:"Stage",
@@ -26,15 +22,19 @@ const stageApplicationSchema= new mongoose.Schema({
         type:String,
         required:true
     },
-    mobile:{
-type:String,
+    phone:{
+    type:String,
         required:true
     },
     status:{
         type:String,
         enum:["pending","approved","reject","inProcess"],
         default:"pending"
-    }
+    },
+    department:String,
+    semester:String,
+    description:String
+
 },{timestamps:true})
 const Application=mongoose.model('Application',stageApplicationSchema)
 export default Application

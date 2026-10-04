@@ -65,7 +65,7 @@ const DEPARTMENTS = [
 
 function scorePassword(pw) {
   let score = 0;
-  if (pw.length >= 8) score++;
+  if (pw.length >= 6) score++;
   if (/[A-Z]/.test(pw)) score++;
   if (/[0-9]/.test(pw)) score++;
   if (/[^A-Za-z0-9]/.test(pw)) score++;
@@ -78,7 +78,7 @@ export default function RegistrationPage() {
   const isDark = theme === "dark";
 
   const [form, setForm] = useState({
-    fullName: "",
+    name: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -98,7 +98,7 @@ export default function RegistrationPage() {
 
   const validate = () => {
     const er = {};
-    if (!form.fullName.trim()) er.fullName = "Full name is required.";
+    if (!form.name.trim()) er.name = "Full name is required.";
     if (!/^\S+@\S+\.\S+$/.test(form.email)) er.email = "Enter a valid email address.";
 
     if (form.password.length < 8) er.password = "Password must be at least 8 characters.";
@@ -112,10 +112,8 @@ export default function RegistrationPage() {
     e.preventDefault();
     if (!validate()) return;
     
-// const result=await axios.post('http://localhost3000/api/register',form,{
-//   withCredentials:true
-// })
-// console.log(result,'r')
+const result=await axios.post('http://localhost:3000/api/register',form)
+console.log(result,'r')
     console.log(form)
     setSubmitting(true);
     setTimeout(() => {
@@ -210,11 +208,11 @@ export default function RegistrationPage() {
                 </p>
 
                 <form onSubmit={handleSubmit} className="mt-8 space-y-5" noValidate>
-                  <Field label="Full Name" error={errors.fullName} t={t}>
-                    <InputIcon icon={User} t={t} error={errors.fullName}>
+                  <Field label="Full Name" error={errors.name} t={t}>
+                    <InputIcon icon={User} t={t} error={errors.name}>
                       <input
-                        value={form.fullName}
-                        onChange={update("fullName")}
+                        value={form.name}
+                        onChange={update("name")}
                         placeholder="Enter You Name"
                         className="w-full bg-transparent text-sm outline-none"
                         style={{ color: t.text }}

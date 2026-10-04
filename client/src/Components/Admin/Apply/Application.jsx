@@ -22,7 +22,7 @@ export default function Application() {
       setLoading(true);
 
       const res = await axios.get(
-        "http://localhost:3000/api/applications",
+        "http://localhost:3000/api/apply/applications",
         {
           withCredentials: true,
         }

@@ -12,11 +12,14 @@ export const createApplication = catchAsyncError(
     async (req, res, next) => {
 
         const {
-            announcement,
+           
             stage,
             name,
             email,
-            mobile
+            phone,
+            department,
+            semester,
+            description
         } = req.body;
 
         const participant = req.user?._id;
@@ -29,11 +32,13 @@ export const createApplication = catchAsyncError(
         }
 
         if (
-            !announcement ||
+            !department||
+            !semester||
+            !description||
             !stage ||
             !name ||
             !email ||
-            !mobile
+            !phone
         ) {
             throw new ErrorHandler(
                 "Please fill all required fields",
@@ -46,7 +51,7 @@ export const createApplication = catchAsyncError(
         const existingApplication =
             await Application.findOne({
                 participant,
-                announcement
+               
             });
 
         if (existingApplication) {
@@ -60,17 +65,16 @@ export const createApplication = catchAsyncError(
         const application = await Application.create({
 
             participant,
-
-            announcement,
-
             stage,
 
             name,
 
             email,
 
-            mobile,
-
+            phone,
+ department,
+            semester,
+            description,
             status: "pending"
         });
 
@@ -102,10 +106,7 @@ export const getApplications = catchAsyncError(
                 "name email Phone"
             )
 
-            .populate(
-                "announcement",
-                "title description applicationDeadline"
-            )
+
 
             .populate(
                 "stage",
@@ -144,9 +145,7 @@ export const getApplication = catchAsyncError(
                     "name email Phone"
                 )
 
-                .populate(
-                    "announcement"
-                )
+            
 
                 .populate(
                     "stage"
@@ -185,10 +184,10 @@ export const getMyApplications = catchAsyncError(
                 participant: req.user._id
             })
 
-                .populate(
-                    "announcement",
-                    "title applicationDeadline"
-                )
+                // .populate(
+                //     "announcement",
+                //     "title applicationDeadline"
+                // )
 
                 .populate(
                     "stage",
@@ -236,7 +235,7 @@ export const updateApplication = catchAsyncError(
         const {
             name,
             email,
-            mobile,
+            phone,
             status
         } = req.body;
 
@@ -253,9 +252,9 @@ export const updateApplication = catchAsyncError(
         }
 
 
-        if (mobile !== undefined) {
+        if (phone !== undefined) {
 
-            application.mobile = mobile;
+            application.phone = phone;
         }
 
 

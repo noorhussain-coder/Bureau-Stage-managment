@@ -29,13 +29,18 @@ import { useTheme } from '../Context/ThemeContext';
 
 }, 
  {title:"Blog",
-    link:"/blog"
+    link:"/blogs"
 
 }, 
  {title:"Contact",
     link:"/contact"
 
 }, 
+ {title:"Stage",
+    link:"/stages"
+
+}, 
+
 ];
 
 const Navbar = () => {

@@ -9,6 +9,7 @@ import crypto from 'crypto'
 
 export const  register=catchAsyncError(async(req,res)=>{
 const {name,email,password}=req.body
+console.log(req.body)
 console.log(name,email,password)
 if(!name||!email||!password){
     throw new ErrorHandler("please enter all field",400)
@@ -38,6 +39,7 @@ res.status(200).json({
 
 export const Login=catchAsyncError(async(req,res,next)=>{
 const {email,password}=req.body
+
 if(!email||!password){
     throw new ErrorHandler('email and password must be fill',400)
 }

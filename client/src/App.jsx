@@ -23,6 +23,10 @@ import Navbar from './Components/Home/Navbar'
 import CreateStage from './Components/Pages/CreateStage'
 import AnnouncementManagement from './Components/Admin/AnnouncementManagement'
 import Apply2 from './Components/Apply2'
+import Stages from './Components/Pages/stage/Stages'
+import Blog from './Components/Pages/Blog/Blog'
+import Blog2 from './Components/Pages/Blog/Blog2'
+import SingleBlog from './Components/Pages/Blog/BlogSingle'
 
 function App() {
 
@@ -39,10 +43,15 @@ function App() {
 <Route path='/login'  element={<LoginPage/>} />
 {/* user */}
 <Route path='/about'  element={<About/>} />
-<Route path='/apply2'  element={<Apply/>} />
+<Route path='/apply/:id'  element={<Apply/>} />
 <Route path='/events'  element={<Events/>} />
 <Route path='/service'  element={<Services/>} />
-<Route path='/apply'  element={<Apply2/>} />
+{/* <Route path='/blog'  element={<Blog/>} /> */}
+<Route path='/blogs'  element={<Blog2/>} />
+<Route path='/service'  element={<Services/>} />
+{/* <Route path='/apply/:id'  element={<Apply2/>} /> */}
+<Route path='/blog/:id'  element={<SingleBlog/>} />
+<Route path='/stages'  element={<Stages/>} />
 
 {/* //Admin */}
 <Route path='/dashboard'  element={<AdminDashboard/>} >
@@ -54,6 +63,7 @@ function App() {
 <Route path='calendar'  element={<Calendar/>} />
 <Route path='setting'  element={<Setting/>} />
 <Route path='announcement'  element={<AnnouncementManagement/>} />
+<Route path='stages'  element={<Stages/>} />
 </Route>
 
 
