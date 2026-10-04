@@ -8,7 +8,7 @@ import {
     getMyApplications,
     updateApplication,
     deleteApplication
-} from "../controllers/application.controller.js";
+} from "../Controller/application.controller.js";
 
 import { AuthMiddleware } from "../middleware/AuthMiddleware.js";
 

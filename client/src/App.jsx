@@ -22,6 +22,7 @@ import Services from './Components/Pages/Services'
 import Navbar from './Components/Home/Navbar'
 import CreateStage from './Components/Pages/CreateStage'
 import AnnouncementManagement from './Components/Admin/AnnouncementManagement'
+import Apply2 from './Components/Apply2'
 
 function App() {
 
@@ -38,9 +39,10 @@ function App() {
 <Route path='/login'  element={<LoginPage/>} />
 {/* user */}
 <Route path='/about'  element={<About/>} />
-<Route path='/apply'  element={<Apply/>} />
+<Route path='/apply2'  element={<Apply/>} />
 <Route path='/events'  element={<Events/>} />
 <Route path='/service'  element={<Services/>} />
+<Route path='/apply'  element={<Apply2/>} />
 
 {/* //Admin */}
 <Route path='/dashboard'  element={<AdminDashboard/>} >

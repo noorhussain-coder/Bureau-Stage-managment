@@ -2,12 +2,12 @@
 import express from "express";
 
 import {
-    createEmail,
-    getEmails,
-    getEmail,
-    updateEmail,
-    deleteEmail
-} from "../controllers/email.controller.js";
+ 
+    deleteEmail,
+    getEmailById,
+    getEmailHistory,
+    SendEmailAll
+} from "../Controller/email.controller.js";
 
 import { AuthMiddleware } from "../middleware/AuthMiddleware.js";
 
@@ -18,7 +18,7 @@ const emailRouter = express.Router();
 emailRouter.post(
     "/emails",
     AuthMiddleware,
-    createEmail
+   SendEmailAll
 );
 
 
@@ -26,7 +26,7 @@ emailRouter.post(
 emailRouter.get(
     "/emails",
     AuthMiddleware,
-    getEmails
+    getEmailHistory
 );
 
 
@@ -34,16 +34,16 @@ emailRouter.get(
 emailRouter.get(
     "/emails/:id",
     AuthMiddleware,
-    getEmail
+  getEmailById
 );
 
 
 // Update email
-emailRouter.put(
-    "/emails/:id",
-    AuthMiddleware,
-    updateEmail
-);
+// emailRouter.put(
+//     "/emails/:id",
+//     AuthMiddleware,
+//     updateEmail
+// );
 
 
 // Delete email

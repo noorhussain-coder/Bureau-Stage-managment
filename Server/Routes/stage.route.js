@@ -7,26 +7,26 @@ import {
     getStage,
     updateStage,
     deleteStage
-} from "../controllers/stage.controller.js";
+} from "../Controller/stage.controller.js";
 
 import { AuthMiddleware } from "../middleware/AuthMiddleware.js";
 
 const stagesRouter = express.Router();
 
 // Create stage
-stagesRouter.post("/stages", AuthMiddleware, createStage);
+stagesRouter.post("/create", AuthMiddleware, createStage);
 
 // Get all stages
-stagesRouter.get("/stages", getStages);
+stagesRouter.get("/get", getStages);
 
 // Get single stage
-stagesRouter.get("/stages/:id", getStage);
+stagesRouter.get("/:id", getStage);
 
 // Update stage
-stagesRouter.put("/stages/:id", AuthMiddleware, updateStage);
+stagesRouter.put("/:id", AuthMiddleware, updateStage);
 
 // Delete stage
-stagesRouter.delete("/stages/:id", AuthMiddleware, deleteStage);
+stagesRouter.delete("/:id", AuthMiddleware, deleteStage);
 
 export default stagesRouter;
 

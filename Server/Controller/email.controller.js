@@ -206,9 +206,6 @@ export const SendEmailAll = catchAsyncError(async (req, res, next) => {
 });
 
 
-// =====================================
-// GET EMAIL BY ID
-// =====================================
 
 export const getEmailById = catchAsyncError(
     async (req, res, next) => {
@@ -232,10 +229,6 @@ export const getEmailById = catchAsyncError(
 );
 
 
-// =====================================
-// GET EMAIL HISTORY
-// =====================================
-
 export const getEmailHistory = catchAsyncError(
     async (req, res, next) => {
 
@@ -250,10 +243,6 @@ export const getEmailHistory = catchAsyncError(
     }
 );
 
-
-// =====================================
-// DELETE EMAIL HISTORY
-// =====================================
 
 export const deleteEmail = catchAsyncError(
     async (req, res, next) => {

@@ -1,6 +1,6 @@
 
 import Stage from "../model/stage.model.js";
-import ErrorHandler from "../middleware/ErrorHandler.js";
+import ErrorHandler from "../util/errorHandler.js";
 import { catchAsyncError } from "../middleware/catchAsyncError.js";
 
 // CREATE STAGE
