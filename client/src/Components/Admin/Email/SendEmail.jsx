@@ -64,12 +64,12 @@ export default function CreateEmail() {
     } catch (error) {
       console.error(error);
 
-      setMessage({
-        type: "error",
-        text:
-          error.response?.data?.message ||
-          "Unable to load students",
-      });
+      // setMessage({
+      //   type: "error",
+      //   text:
+      //     error.response?.data?.message ||
+      //     "Unable to load students",
+      // });
     } finally {
       setLoadingStudents(false);
     }

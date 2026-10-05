@@ -299,7 +299,7 @@ for (const [key, value] of formData.entries()) {
     try {
       setDeletingId(id);
 
-      await api.delete(`/api/blogs/${id}`);
+      await api.delete(`/api/blogss/${id}`);
 
       setBlogs((prev) => prev.filter((blog) => blog._id !== id));
 

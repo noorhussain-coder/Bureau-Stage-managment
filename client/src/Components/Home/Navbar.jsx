@@ -40,6 +40,10 @@ import { useTheme } from '../Context/ThemeContext';
     link:"/stages"
 
 }, 
+ {title:"My-Applictaion",
+    link:"/apply-section"
+
+}, 
 
 ];
 

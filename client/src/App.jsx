@@ -27,6 +27,10 @@ import Stages from './Components/Pages/stage/Stages'
 import Blog from './Components/Pages/Blog/Blog'
 import Blog2 from './Components/Pages/Blog/Blog2'
 import SingleBlog from './Components/Pages/Blog/BlogSingle'
+import MyApplications from './Components/otherpage/MyAplication'
+import ApplicationProcess from './Components/otherpage/ApplicationProcess'
+import ApplicationProcessAdmin from './Components/Admin/ApplicationProcessAdmin'
+import EmailHistory from './Components/Admin/Email/EmailHistory'
 
 function App() {
 
@@ -42,6 +46,12 @@ function App() {
 <Route path='/register'  element={<RegistrationPage/>} />
 <Route path='/login'  element={<LoginPage/>} />
 {/* user */}
+<Route
+  path="/application-process"
+  element={<ApplicationProcess />}
+/>
+
+
 <Route path='/about'  element={<About/>} />
 <Route path='/apply/:id'  element={<Apply/>} />
 <Route path='/events'  element={<Events/>} />
@@ -52,6 +62,7 @@ function App() {
 {/* <Route path='/apply/:id'  element={<Apply2/>} /> */}
 <Route path='/blog/:id'  element={<SingleBlog/>} />
 <Route path='/stages'  element={<Stages/>} />
+<Route path='/apply-section'  element={<MyApplications/>} />
 
 {/* //Admin */}
 <Route path='/dashboard'  element={<AdminDashboard/>} >
@@ -64,7 +75,20 @@ function App() {
 <Route path='setting'  element={<Setting/>} />
 <Route path='announcement'  element={<AnnouncementManagement/>} />
 <Route path='stages'  element={<Stages/>} />
+<Route
+  path="application-process"
+  element={<ApplicationProcessAdmin />}
+/>
+
+<Route
+  path="email-history"
+  element={<EmailHistory />}
+/>
+
+
+
 </Route>
+
 
 
 

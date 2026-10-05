@@ -19,7 +19,14 @@ app.use(express.urlencoded({extended:true}))
 app.use(cookieParser())
 DataBase()
 app.use(cors({origin:"http://localhost:5173",credentials:true,methods:["GET","POST","PUT","DELETE"]}))
+import applicationProcessRoutes from "./Routes/ApplicationProcess.route.js";
+import emailHistoryRoutes from "./Routes/emailHistory.routes.js";
 
+app.use(
+  "/api/email-history",
+  emailHistoryRoutes
+);
+app.use("/api", applicationProcessRoutes);
 
 app.use('/api',userRoute)
 app.use('/api/announcement',announcementRoute)

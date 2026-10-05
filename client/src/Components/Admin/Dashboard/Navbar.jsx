@@ -10,6 +10,8 @@ import {
   X,
 
   Building2,
+  PlusCircle,
+  LineChart,
 } from "lucide-react";
 
 const Navbar = () => {
@@ -57,10 +59,12 @@ const NAV_ITEMS = [
   { icon: FileText, label: "Applications",link:"/dashboard/application" },
   { icon: CalendarDays, label: "Calendar" ,link:"/dashboard/calendar"},
   { icon: Mail, label: "Emails",link:"/dashboard/create-email" },
-  { icon: Newspaper, label: "Blog & Reports",link:"/dashboard/create-blog" },
+  { icon: Mail, label: "email-history",link:"/dashboard/email-history" },
+  { icon: Newspaper, label: "Blog ",link:"/dashboard/create-blog" },
   { icon: Settings, label: "Settings" ,link:"/dashboard/setting"},
   { icon: Settings, label: "announcement" ,link:"/dashboard/announcement"},
-  { icon: Settings, label: "create-stage" ,link:"/dashboard/create-stage"},
+  { icon: PlusCircle, label: "create-stage" ,link:"/dashboard/create-stage"},
+  { icon: LineChart, label: "application-process" ,link:"/dashboard/application-process"},
 
  
 ];
